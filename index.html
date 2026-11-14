@@ -1,50 +1,164 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="color-scheme" content="dark">
-<title>ELPKTX HOST — PS4 14.00</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>ELPKTX HOST | PS4 14.02</title>
 <style>
-:root{--bg:#07080b;--panel:#101218;--panel2:#151922;--red:#ff263d;--red2:#a90820;--muted:#9aa1ad;--line:#292e39;--white:#f5f6f8;--green:#56e39a}
-*{box-sizing:border-box}html{min-height:100%;background:var(--bg)}body{margin:0;color:var(--white);font-family:Arial,Helvetica,sans-serif;background:radial-gradient(ellipse at 50% -15%,#4a0a17 0,transparent 43%),linear-gradient(180deg,#090a0e,#06070a 70%);min-height:100vh}
-.wrap{width:min(1050px,94vw);margin:auto;padding:22px 0 34px}.top{display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line);padding:8px 2px 18px}.brand{display:flex;align-items:center;gap:12px}.mark{width:46px;height:46px;border:1px solid #ff334b;border-radius:13px;display:grid;place-items:center;color:#fff;font-weight:900;font-size:17px;box-shadow:0 0 24px #ff263d35,inset 0 0 18px #ff263d20}.brand h1{font-size:20px;letter-spacing:3px;margin:0}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:5px}.pill{border:1px solid #54303a;color:#ff7584;background:#250d14;padding:8px 12px;border-radius:30px;font-size:11px;letter-spacing:1px;white-space:nowrap}
-.hero{text-align:center;padding:34px 10px 26px}.eyebrow{font-size:11px;color:#ff6576;letter-spacing:4px;font-weight:bold}.hero h2{font-size:clamp(31px,6vw,58px);margin:12px 0 8px;letter-spacing:2px}.hero h2 span{color:var(--red);text-shadow:0 0 25px #ff263d55}.hero p{margin:0;color:var(--muted);font-size:14px}.firmware{display:inline-flex;align-items:center;gap:9px;margin-top:20px;padding:10px 16px;border:1px solid #383e49;border-radius:10px;background:#11141b;font-size:13px}.dot{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 10px var(--green)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px}.card{background:linear-gradient(145deg,#151922,#0d1016);border:1px solid var(--line);border-radius:17px;padding:20px;box-shadow:0 15px 35px #0005}.card h3{font-size:15px;margin:0 0 7px;letter-spacing:1px}.sub{font-size:12px;color:var(--muted);line-height:1.5;margin:0 0 17px}.choice{width:100%;text-align:left;border:1px solid #343a46;background:#11151d;color:var(--white);padding:15px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px;cursor:pointer}.choice.selected{border-color:var(--red);box-shadow:0 0 0 1px #ff263d35,inset 0 0 22px #ff263d12}.choice strong{display:block;font-size:14px}.choice small{display:block;color:var(--muted);font-size:11px;margin-top:5px}.radio{width:17px;height:17px;border:2px solid #646b78;border-radius:50%;flex:none}.selected .radio{border:5px solid var(--red)}
-.row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}.row:last-child{border:0}.row strong{font-size:13px}.row small{display:block;color:var(--muted);font-size:11px;margin-top:4px}.switch{width:48px;height:27px;border:1px solid #4a505c;background:#252a34;border-radius:30px;padding:3px;cursor:pointer;flex:none}.switch i{display:block;width:19px;height:19px;background:#aab0ba;border-radius:50%;transition:.15s}.switch.on{background:#641421;border-color:var(--red)}.switch.on i{transform:translateX(20px);background:#fff;box-shadow:0 0 9px #ff263d}
-.start{width:100%;border:0;border-radius:13px;margin-top:17px;padding:17px;background:linear-gradient(100deg,#c20d29,#ff3047);color:#fff;font-size:17px;font-weight:900;letter-spacing:3px;cursor:pointer;box-shadow:0 8px 25px #ff263d30}.start:active,.choice:active{transform:scale(.99)}.notice{margin-top:14px;border:1px solid #5b3d25;background:#21180f;color:#e7c59d;border-radius:11px;padding:12px;font-size:11px;line-height:1.55}.log{margin-top:16px}.loghead{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.loghead h3{font-size:13px;letter-spacing:1px;margin:0}.loghead button{background:none;border:0;color:#ff7584;font-size:11px;cursor:pointer}.console{height:130px;overflow:auto;background:#07090d;border:1px solid #272c36;border-radius:10px;padding:12px;font:11px/1.7 Consolas,monospace;color:#aeb6c3}.line{display:block}.time{color:#697485}.ok{color:#66dfa0}.warn{color:#ffc078}.foot{text-align:center;color:#69717f;font-size:10px;letter-spacing:1px;margin-top:23px}
-@media(max-width:650px){.wrap{width:92vw;padding-top:14px}.grid{grid-template-columns:1fr}.hero{padding:28px 5px 20px}.top{align-items:flex-start}.pill{font-size:9px}.brand h1{font-size:17px}}
+*{box-sizing:border-box}
+body{margin:0;background:#080808;color:#eee;font-family:Arial,sans-serif}
+header{text-align:center;padding:38px 15px;background:radial-gradient(ellipse at top,#500000,#100000 55%,#080808);border-bottom:2px solid #ed1717}
+.logo{font-size:43px;font-weight:1000;letter-spacing:6px;color:#ff2525;text-shadow:0 0 12px red,0 0 30px #900}
+.subtitle{font-size:12px;letter-spacing:4px;color:#aaa;margin-top:8px}
+.status{display:inline-block;margin-top:18px;padding:8px 15px;border:1px solid #792020;border-radius:30px;color:#ff7777;font-size:11px}
+nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;padding:15px;background:#101010;border-bottom:1px solid #292929}
+nav button{width:auto;margin:0;padding:11px 15px;background:#1b1b1b;border:1px solid #383838}
+nav button.active,button:hover{background:#bd1010;border-color:#ff3535}
+main{max-width:850px;margin:auto;padding:20px}
+section{display:none}
+section.active{display:block}
+h2{font-size:19px;color:#ff3939;margin:22px 0 15px}
+.card{padding:20px;margin:12px 0;background:linear-gradient(135deg,#191919,#0d0d0d);border:1px solid #333;border-left:3px solid #e51b1b;border-radius:10px}
+.card p{color:#aaa;font-size:13px;line-height:1.6}
+button{cursor:pointer;background:#c41212;color:white;border:0;border-radius:7px;padding:13px;font-weight:bold}
+.action{width:100%;margin-top:12px}
+.secondary{background:#292929}
+input,select{width:100%;padding:13px;margin-top:12px;background:#080808;color:white;border:1px solid #555;border-radius:7px}
+.result{margin-top:15px;color:#ff7777;font-size:13px;line-height:1.6}
+.tag{font-size:10px;color:#ff7777;border:1px solid #762020;padding:5px 8px;border-radius:20px}
+footer{text-align:center;padding:30px;color:#666;font-size:11px;border-top:1px solid #292929}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header class="top"><div class="brand"><div class="mark">E</div><div><h1>ELPKTX</h1><small>PLAYSTATION EXPLOIT HOST</small></div></div><div class="pill">LOCAL INTERFACE · BETA</div></header>
-<section class="hero"><div class="eyebrow">WELCOME BACK</div><h2>PS4 <span>HOST</span></h2><p>Interface de lancement — environnement de test</p><div class="firmware"><span class="dot"></span> Firmware cible : <b>14.00</b></div></section>
-<div class="grid">
-<section class="card"><h3>01 / PAYLOAD</h3><p class="sub">Choisis le mode à afficher dans cette interface.</p>
-<button class="choice selected" data-mode="GoldHEN"><span><strong>GoldHEN</strong><small>Homebrew enabler · mode sélectionné</small></span><span class="radio"></span></button>
-<button class="choice" data-mode="PS4-HEN"><span><strong>PS4-HEN</strong><small>Mode HEN alternatif</small></span><span class="radio"></span></button>
-<div class="notice">Les choix sont visuels pour le moment. Aucun payload n'est exécuté par cette page de démonstration.</div>
-</section>
-<section class="card"><h3>02 / OPTIONS</h3><p class="sub">Paramètres de l'interface de test.</p>
-<div class="row"><div><strong>Autostart</strong><small>Démarrage automatique simulé</small></div><button class="switch" id="autostart" aria-label="Autostart"><i></i></button></div>
-<div class="row"><div><strong>Mode diagnostic</strong><small>Afficher les événements de test</small></div><button class="switch on" id="diagnostic" aria-label="Diagnostic"><i></i></button></div>
-<button class="start" id="start">START</button>
-<div class="notice">Version interface : 0.1 · Cible UI : PS4 14.00<br>Compatibilité exploit non intégrée.</div>
-</section>
+<header>
+<div class="logo">ELPKTX</div>
+<div class="subtitle">ULTIMATE PS4 HOST</div>
+<div class="status">● ELPKTX HOST V1.1 ONLINE</div>
+</header>
+
+<nav>
+<button class="active" onclick="showTab('home',this)">ACCUEIL</button>
+<button onclick="showTab('jailbreak',this)">JAILBREAK</button>
+<button onclick="showTab('goldhen',this)">GOLDHEN</button>
+<button onclick="showTab('tools',this)">OUTILS</button>
+<button onclick="showTab('system',this)">DIAGNOSTIC</button>
+</nav>
+
+<main>
+<section id="home" class="active">
+<h2>WELCOME BACK</h2>
+<div class="card">
+<span class="tag">ELPKTX PROJECT</span>
+<h3>Bienvenue sur ton HOST</h3>
+<p>Interface personnalisée dédiée aux ressources et diagnostics PlayStation 4.</p>
+<p>Développeur : ELPKTX</p>
 </div>
-<section class="card log"><div class="loghead"><h3>03 / SYSTEM LOG</h3><button id="clear">EFFACER</button></div><div class="console" id="console" aria-live="polite"><span class="line"><span class="time">[ELPKTX]</span> Interface chargée.</span><span class="line"><span class="time">[INFO]</span> Profil visuel PS4 14.00 prêt.</span><span class="line ok">[READY] En attente d'une action utilisateur.</span></div></section>
-<div class="foot">ELPKTX HOST · RED IS THE NEW POWER · UI DEMO</div>
+<div class="card">
+<h3>CONSOLE TARGET</h3>
+<p>PlayStation 4 / PS4 Slim / PS4 Pro</p>
+<p>Firmware cible : 14.02</p>
+<p>Compatibilité : à vérifier selon chaque ressource.</p>
 </div>
+</section>
+
+<section id="jailbreak">
+<h2>JAILBREAK RESOURCES</h2>
+<div class="card">
+<h3>WEBKIT 14.02</h3>
+<p>Accès à la page WebKit externe.</p>
+<button class="action" onclick="openLink('https://jeef2x.github.io/webkit1402/PS4_1402_v3/')">OPEN WEBKIT 14.02</button>
+</div>
+<div class="card">
+<h3>WEBKITTY HOST</h3>
+<p>Accès à la plateforme externe GoldHEN.</p>
+<button class="action" onclick="openLink('https://webkitty.arabpixel.net/')">OPEN WEBKITTY</button>
+</div>
+<div class="card">
+<h3>INFORMATIONS</h3>
+<p>Un accès à une page WebKit ne garantit pas la compatibilité d'un exploit ou d'un payload avec le firmware 14.02.</p>
+</div>
+</section>
+
+<section id="goldhen">
+<h2>GOLDHEN CENTER</h2>
+<div class="card">
+<h3>GOLDHEN</h3>
+<p>Accès aux ressources externes GoldHEN.</p>
+<button class="action" onclick="openLink('https://webkitty.arabpixel.net/')">OPEN GOLDHEN HOST</button>
+</div>
+<div class="card">
+<h3>COMPATIBILITY STATUS</h3>
+<p>Ne pas considérer une version comme compatible sans confirmation de sa documentation officielle.</p>
+</div>
+</section>
+
+<section id="tools">
+<h2>TOOLS & RESOURCES</h2>
+<div class="card">
+<h3>NETWORK</h3>
+<p>Vérifier la connexion Internet de la console.</p>
+<button class="action" onclick="openLink('https://www.google.com/')">TEST CONNECTION</button>
+</div>
+<div class="card">
+<h3>OFFICIAL PROJECTS</h3>
+<p>Retrouver les ressources et documentations.</p>
+<button class="action" onclick="openLink('https://github.com/GoldHEN/GoldHEN')">GOLDHEN GITHUB</button>
+</div>
+</section>
+
+<section id="system">
+<h2>SYSTEM DIAGNOSTICS</h2>
+<div class="card">
+<h3>FIRMWARE CHECK</h3>
+<p>Sélectionne le firmware de ta console.</p>
+<select id="fw">
+<option value="">Sélectionner</option>
+<option>14.02</option>
+<option>Autre firmware</option>
+</select>
+<button class="action" onclick="checkFW()">ANALYSER</button>
+<div id="fwresult" class="result"></div>
+</div>
+<div class="card">
+<h3>NETWORK STATUS</h3>
+<div id="network" class="result"></div>
+<button class="action secondary" onclick="checkNetwork()">ACTUALISER</button>
+</div>
+<div class="card">
+<h3>BROWSER INFORMATION</h3>
+<div id="browser" class="result"></div>
+</div>
+</section>
+</main>
+
+<footer>
+ELPKTX HOST V1.1<br>
+DESIGNED BY ELPKTX<br>
+UNOFFICIAL COMMUNITY PROJECT · 2026
+</footer>
+
 <script>
-(()=>{
-const log=document.getElementById('console');let mode='GoldHEN';let diagnostic=true;
-function write(msg,kind=''){if(!diagnostic&&kind!=='warn')return;const line=document.createElement('span');line.className='line '+kind;const t=document.createElement('span');t.className='time';t.textContent='['+new Date().toLocaleTimeString('fr-FR')+'] ';line.append(t,document.createTextNode(msg));log.append(line);log.scrollTop=log.scrollHeight;}
-document.querySelectorAll('.choice').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.choice').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');mode=btn.dataset.mode;write('Mode sélectionné : '+mode+'.');}));
-['autostart','diagnostic'].forEach(id=>document.getElementById(id).addEventListener('click',function(){this.classList.toggle('on');if(id==='diagnostic'){diagnostic=this.classList.contains('on');}write(id+' : '+(this.classList.contains('on')?'activé':'désactivé')+'.');}));
-document.getElementById('start').addEventListener('click',()=>{write('Demande START reçue. Mode UI : '+mode+'.','warn');write('Démo uniquement : aucun exploit, payload ou accès kernel lancé.','warn');});
-document.getElementById('clear').addEventListener('click',()=>{log.replaceChildren();write('Journal réinitialisé.');});
-})();
+function showTab(id,btn){
+ document.querySelectorAll('main section').forEach(s=>s.classList.remove('active'));
+ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ btn.classList.add('active');
+}
+function openLink(url){window.open(url,'_blank','noopener,noreferrer')}
+function checkFW(){
+ let fw=document.getElementById('fw').value;
+ let out=document.getElementById('fwresult');
+ if(!fw){out.textContent='Sélectionne un firmware.';return}
+ out.textContent=fw==='14.02'?'Firmware déclaré : 14.02. Compatibilité des ressources à vérifier.':'Firmware différent de la cible principale.';
+}
+function checkNetwork(){
+ document.getElementById('network').textContent=
+ navigator.onLine?'Connexion réseau détectée par le navigateur.':'Aucune connexion réseau détectée.';
+}
+checkNetwork();
+document.getElementById('browser').textContent=
+ 'Navigateur : '+navigator.userAgent;
 </script>
 </body>
 </html>
