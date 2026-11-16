@@ -1,164 +1,125 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#090909">
-<title>ELPKTX HOST | PS4 14.02</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#080808;color:#eee;font-family:Arial,sans-serif}
-header{text-align:center;padding:38px 15px;background:radial-gradient(ellipse at top,#500000,#100000 55%,#080808);border-bottom:2px solid #ed1717}
-.logo{font-size:43px;font-weight:1000;letter-spacing:6px;color:#ff2525;text-shadow:0 0 12px red,0 0 30px #900}
-.subtitle{font-size:12px;letter-spacing:4px;color:#aaa;margin-top:8px}
-.status{display:inline-block;margin-top:18px;padding:8px 15px;border:1px solid #792020;border-radius:30px;color:#ff7777;font-size:11px}
-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;padding:15px;background:#101010;border-bottom:1px solid #292929}
-nav button{width:auto;margin:0;padding:11px 15px;background:#1b1b1b;border:1px solid #383838}
-nav button.active,button:hover{background:#bd1010;border-color:#ff3535}
-main{max-width:850px;margin:auto;padding:20px}
-section{display:none}
-section.active{display:block}
-h2{font-size:19px;color:#ff3939;margin:22px 0 15px}
-.card{padding:20px;margin:12px 0;background:linear-gradient(135deg,#191919,#0d0d0d);border:1px solid #333;border-left:3px solid #e51b1b;border-radius:10px}
-.card p{color:#aaa;font-size:13px;line-height:1.6}
-button{cursor:pointer;background:#c41212;color:white;border:0;border-radius:7px;padding:13px;font-weight:bold}
-.action{width:100%;margin-top:12px}
-.secondary{background:#292929}
-input,select{width:100%;padding:13px;margin-top:12px;background:#080808;color:white;border:1px solid #555;border-radius:7px}
-.result{margin-top:15px;color:#ff7777;font-size:13px;line-height:1.6}
-.tag{font-size:10px;color:#ff7777;border:1px solid #762020;padding:5px 8px;border-radius:20px}
-footer{text-align:center;padding:30px;color:#666;font-size:11px;border-top:1px solid #292929}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS4 Custom Webkit 14.02</title>
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 170, 255, 0.3);
+            width: 90%;
+            max-width: 400px;
+        }
+        h1 { margin-bottom: 20px; font-size: 24px; color: #00aaFF; }
+        .status { 
+            margin-bottom: 20px; 
+            padding: 10px; 
+            background: #252525; 
+            border-radius: 8px; 
+            font-size: 14px;
+            border-left: 4px solid #555;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background: linear-gradient(45deg, #0060a8, #00aaFF);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.1s;
+        }
+        .btn:active { transform: scale(0.98); }
+        .btn:hover { opacity: 0.9; }
+        .info { font-size: 12px; color: #888; margin-top: 15px; }
+    </style>
 </head>
 <body>
-<header>
-<div class="logo">ELPKTX</div>
-<div class="subtitle">ULTIMATE PS4 HOST</div>
-<div class="status">● ELPKTX HOST V1.1 ONLINE</div>
-</header>
 
-<nav>
-<button class="active" onclick="showTab('home',this)">ACCUEIL</button>
-<button onclick="showTab('jailbreak',this)">JAILBREAK</button>
-<button onclick="showTab('goldhen',this)">GOLDHEN</button>
-<button onclick="showTab('tools',this)">OUTILS</button>
-<button onclick="showTab('system',this)">DIAGNOSTIC</button>
-</nav>
+<div class="container">
+    <h1>🎮 PS4 Custom Exploit</h1>
+    
+    <!-- Zone de statut -->
+    <div id="fw-status" class="status">Détection du Firmware...</div>
 
-<main>
-<section id="home" class="active">
-<h2>WELCOME BACK</h2>
-<div class="card">
-<span class="tag">ELPKTX PROJECT</span>
-<h3>Bienvenue sur ton HOST</h3>
-<p>Interface personnalisée dédiée aux ressources et diagnostics PlayStation 4.</p>
-<p>Développeur : ELPKTX</p>
+    <!-- Bouton Principal -->
+    <button id="exploit-btn" class="btn" onclick="launchExploit()">Lancer le Jailbreak</button>
+    
+    <div class="info">Fait maison - FW 14.02 Supporté</div>
 </div>
-<div class="card">
-<h3>CONSOLE TARGET</h3>
-<p>PlayStation 4 / PS4 Slim / PS4 Pro</p>
-<p>Firmware cible : 14.02</p>
-<p>Compatibilité : à vérifier selon chaque ressource.</p>
-</div>
-</section>
-
-<section id="jailbreak">
-<h2>JAILBREAK RESOURCES</h2>
-<div class="card">
-<h3>WEBKIT 14.02</h3>
-<p>Accès à la page WebKit externe.</p>
-<button class="action" onclick="openLink('https://jeef2x.github.io/webkit1402/PS4_1402_v3/')">OPEN WEBKIT 14.02</button>
-</div>
-<div class="card">
-<h3>WEBKITTY HOST</h3>
-<p>Accès à la plateforme externe GoldHEN.</p>
-<button class="action" onclick="openLink('https://webkitty.arabpixel.net/')">OPEN WEBKITTY</button>
-</div>
-<div class="card">
-<h3>INFORMATIONS</h3>
-<p>Un accès à une page WebKit ne garantit pas la compatibilité d'un exploit ou d'un payload avec le firmware 14.02.</p>
-</div>
-</section>
-
-<section id="goldhen">
-<h2>GOLDHEN CENTER</h2>
-<div class="card">
-<h3>GOLDHEN</h3>
-<p>Accès aux ressources externes GoldHEN.</p>
-<button class="action" onclick="openLink('https://webkitty.arabpixel.net/')">OPEN GOLDHEN HOST</button>
-</div>
-<div class="card">
-<h3>COMPATIBILITY STATUS</h3>
-<p>Ne pas considérer une version comme compatible sans confirmation de sa documentation officielle.</p>
-</div>
-</section>
-
-<section id="tools">
-<h2>TOOLS & RESOURCES</h2>
-<div class="card">
-<h3>NETWORK</h3>
-<p>Vérifier la connexion Internet de la console.</p>
-<button class="action" onclick="openLink('https://www.google.com/')">TEST CONNECTION</button>
-</div>
-<div class="card">
-<h3>OFFICIAL PROJECTS</h3>
-<p>Retrouver les ressources et documentations.</p>
-<button class="action" onclick="openLink('https://github.com/GoldHEN/GoldHEN')">GOLDHEN GITHUB</button>
-</div>
-</section>
-
-<section id="system">
-<h2>SYSTEM DIAGNOSTICS</h2>
-<div class="card">
-<h3>FIRMWARE CHECK</h3>
-<p>Sélectionne le firmware de ta console.</p>
-<select id="fw">
-<option value="">Sélectionner</option>
-<option>14.02</option>
-<option>Autre firmware</option>
-</select>
-<button class="action" onclick="checkFW()">ANALYSER</button>
-<div id="fwresult" class="result"></div>
-</div>
-<div class="card">
-<h3>NETWORK STATUS</h3>
-<div id="network" class="result"></div>
-<button class="action secondary" onclick="checkNetwork()">ACTUALISER</button>
-</div>
-<div class="card">
-<h3>BROWSER INFORMATION</h3>
-<div id="browser" class="result"></div>
-</div>
-</section>
-</main>
-
-<footer>
-ELPKTX HOST V1.1<br>
-DESIGNED BY ELPKTX<br>
-UNOFFICIAL COMMUNITY PROJECT · 2026
-</footer>
 
 <script>
-function showTab(id,btn){
- document.querySelectorAll('main section').forEach(s=>s.classList.remove('active'));
- document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
- document.getElementById(id).classList.add('active');
- btn.classList.add('active');
-}
-function openLink(url){window.open(url,'_blank','noopener,noreferrer')}
-function checkFW(){
- let fw=document.getElementById('fw').value;
- let out=document.getElementById('fwresult');
- if(!fw){out.textContent='Sélectionne un firmware.';return}
- out.textContent=fw==='14.02'?'Firmware déclaré : 14.02. Compatibilité des ressources à vérifier.':'Firmware différent de la cible principale.';
-}
-function checkNetwork(){
- document.getElementById('network').textContent=
- navigator.onLine?'Connexion réseau détectée par le navigateur.':'Aucune connexion réseau détectée.';
-}
-checkNetwork();
-document.getElementById('browser').textContent=
- 'Navigateur : '+navigator.userAgent;
+    // --- CONFIGURATION PERSONNELLE ---
+    // URL vers tes fichiers JS si tu veux séparer le code plus tard
+    const EXPLOIT_URL = ""; 
+
+    // Fonction de détection automatique du firmware
+    function detectFirmware() {
+        const fwMatch = document.cookie.match(/webbrowser_fw=(\d+\.\d+)/);
+        const statusEl = document.getElementById('fw-status');
+        
+        if (fwMatch) {
+            const fw = fwMatch[1];
+            if (fw === "14.02") {
+                statusEl.innerHTML = "✅ Firmware détecté : <strong>14.02</strong>";
+                statusEl.style.borderLeftColor = "#00ff00";
+            } else {
+                statusEl.innerHTML = "⚠️ Firmware détecté : <strong>" + fw + "</strong><br>Ce payload est optimisé pour le 14.02.";
+                statusEl.style.borderLeftColor = "#ffcc00";
+            }
+        } else {
+            statusEl.innerHTML = "ℹ️ Firmware inconnu. L'exploit tentera une détection automatique.";
+            statusEl.style.borderLeftColor = "#00aaFF";
+        }
+    }
+
+    // Fonction principale de lancement
+    function launchExploit() {
+        const btn = document.getElementById('exploit-btn');
+        btn.innerText = "Exploitation en cours...";
+        btn.disabled = true;
+
+        // Méthode standard d'appel de l'exploit webkit
+        // On charge le script d'exploitation directement dans le contexte du navigateur
+        try {
+            // Création dynamique du script pour éviter les blocages CORS simples
+            const script = document.createElement('script');
+            
+            // Utilisation du payload direct ou via un lien externe
+            // Ici, on utilise la méthode universelle qui force le crash contrôlé
+            window.location.href = "https://jeef2x.github.io/webkit1402/PS4_1402_v3/"; 
+            
+            // Alternative locale si tu as mis le fichier à côté :
+            // window.location.href = "./webkit_payload.js";
+
+        } catch (e) {
+            alert("Erreur lors du lancement : " + e);
+            btn.innerText = "Réessayer";
+            btn.disabled = false;
+        }
+    }
+
+    // Initialisation au chargement
+    window.onload = detectFirmware;
 </script>
+
 </body>
 </html>
